@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "email": "teste@gmail.com",
+      "password": "$2a$10$73D2dD/j3a//keYjVxCUNeD8xe6wxjldL3n24ABDazIRPB7FtSWOe",
+      "name": "teste",
+      "image": "url.img",
+      "city": "lugar nenhum",
+      "type": "user",
+      "wallet": 1,
+      "id": 1
+    },
+    {
+      "email": "coletor@gmail.com",
+      "password": "$2a$10$./Lr186YhWq3OyYvJ3oRVet74RypG/mR1eSjggLDrNtqUxbY6HPTq",
+      "name": "coletor",
+      "image": "url.img",
+      "city": "lugar nenhum",
+      "type": "coletor",
+      "wallet": 1,
+      "id": 2
+    },
+    {
+      "email": "coletorsegundo@gmail.com",
+      "password": "$2a$10$kw79RPNfunNtTzQ2EPOBxOHUPlRn1iw9PGebUDiTs.F2ZTXCFQVZK",
+      "name": "coletorsegundo",
+      "image": "url.img",
+      "city": "lugar nenhum",
+      "type": "coletor",
+      "wallet": 1,
+      "": [],
+      "id": 3
+    },
+    {
+      "email": "coletorterceiro@gmail.com",
+      "password": "$2a$10$IeEvyUh51ytNXUqYsWHvueK.xrIZgrtozCoVmXeeYs0KUnv9N.6gC",
+      "name": "coletorterceiro",
+      "image": "url.img",
+      "city": "lugar nenhum",
+      "type": "coletor",
+      "wallet": 1,
+      "waste withdrawn": [],
+      "id": 4
+    }
+  ],
+  "waste": [
+    {
+      "category": "papel",
+      "height": "10kg",
+      "userId": "1",
+      "image": "url.img",
+      "status": "pendente",
+      "id": 1
+    },
+    {
+      "category": "papel",
+      "height": "10kg",
+      "userId": "1",
+      "image": "url.img",
+      "status": "pendente",
+      "id": 2
+    },
+    {
+      "category": "papel",
+      "height": "10kg",
+      "userId": "1",
+      "image": "url.img",
+      "status": "pendente",
+      "id": 3
+    },
+    {
+      "category": "papel",
+      "height": "10kg",
+      "userId": "1",
+      "image": "url.img",
+      "status": "pendente",
+      "id": 4
+    },
+    {
+      "category": "eletronico",
+      "height": "10kg",
+      "userId": "1",
+      "image": "url.img",
+      "status": "pendente",
+      "id": 5
+    }
+  ],
+  "companies": [
+    {
+      "nome": "ecobanna",
+      "city": "sao paulo",
+      "imgage": "url.img",
+      "materials": [
+        "papel",
+        "plastico"
+      ]
+    }
+  ]
+}
