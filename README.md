@@ -134,4 +134,4 @@ Com este endpoint podemos fazer a alteração de qualquer propriedade do resídu
     "collector_id": "3"
 }
 ```
-
+O "collector_id" ira recerber o id do collector que ira realizar a coleta do resíduo
