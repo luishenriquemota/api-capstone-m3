@@ -87,9 +87,9 @@
   ],
   "companies": [
     {
-      "nome": "ecobanna",
+      "name": "ecoreciclagens",
       "city": "sao paulo",
-      "imgage": "url.img",
+      "image": "url.img",
       "materials": [
         "papel",
         "plastico"

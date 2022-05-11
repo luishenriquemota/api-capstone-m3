@@ -1,123 +1,137 @@
-# json-server-base
-
-Esse é o repositório com a base de JSON-Server + JSON-Server-Auth já configurada, feita para ser usada no desenvolvimento das API's nos Capstones do Q2.
-
 ## Endpoints
 
-Assim como a documentação do JSON-Server-Auth traz (https://www.npmjs.com/package/json-server-auth), existem 3 endpoints que podem ser utilizados para cadastro e 2 endpoints que podem ser usados para login.
+A API tem um total de 08 endpoints, sendo em volta dos usuarios (Client) e (Collector) 
 
-### Cadastro
-
-POST /register <br/>
-POST /signup <br/>
-POST /users
-
-Qualquer um desses 3 endpoints irá cadastrar o usuário na lista de "Users", sendo que os campos obrigatórios são os de email e password.
-Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do cadastro dos usuários.
+O url base da API é https://api-capstone-m3.herokuapp.com/
 
 
-### Login
+## Rotas que não precisam de autenticação
 
-POST /login <br/>
-POST /signin
+<h2 align ='center'> Cadastro do usúario </h2>
 
-Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
+`POST /register`
 
+Existem dois campo obrigatórios para essa rota que são os de email e password, você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do cadastro dos usúarios.
 
-## Endpoint
-O Endpoint da API é esta aqui -> https://json-server-luis.herokuapp.com/
+<h2 align ='center'> Login do usúario </h2>
 
-
-## rotas que não precisam de autenticação
-
-O usuario sem fazer login ou se cadastrar, pode visualizar os posts feitos pelos os outros usuarios
-
-`GET /posts -  FORMATO DA RESPOSTA - STATUS 200`
+`POST /login - FORMATO DA REQUISIÇÃO`
 ```json
+{
+"email": "teste@gmail.com",
+"password": "123456"
+}
+```
 
-[
-    {
-      "img": "url.image",
-      "id": 1
-    },
-    {
-      "img": "url.image",
-      "description": "text",
-      "id": 2
-    },
-    {
-      "img": "url.image",
-      "description": "text",
-      "userId": "2",
-      "id": 3
-    },
-    {
-      "img": "url.image",
-      "description": "text",
-      "userId": "1",
-      "id": 4
-    }
-  ]
-  ```
+Este endpoints é usado para fazer login do usúario que ja esta cadastrado
 
-
-## Rotas que precisam de autenticação
+## Rotas que necessitam de autenticação
 
 Rotas que necessitam de autorização deve ser informado no cabeçalho da requisição o campo "Authorization", dessa forma:
 
-Authorization: Bearer {token}
+> Authorization: Bearer {token}
 
-Após o usuario estar logado ele deve conseguir criar posts, e tambem consegue visualiazar as mensagens não só dele como a de outros usuarios e tambem criar suas mensagens
+Após ele estar logado, ele deve conseguir utilizar todas os rotas que serão descritas abaixo.
 
-<h2 align ='center'> Criar post </h2>
 
-`POST /posts - FORMATO DA REQUISIÇÃO - STATUS 201`
+## rotas do client
+
+<h2 align ='center'> Cadastrar um resíduo </h2>
+
+`POST /waste - FORMATO DA REQUISIÇÃO`
 ```json
 {
-	"img": "url",
-	"desctipton": "lorem ipsum",
-    "userId": "2"
-}
-```
-   Os campos mostrados no exemplo não são obrigatórios, mas o ideal e ter eles, e você consegue mandar mais coisas no corpo da requisição não só eles
-
-
-
-<h2 align ='center'> Criar mensagens </h2>
-
-Da mesma forma de criar posts, consegimos criar mensagens, desta forma:
-
-`POST /messages - FORMATO DA REQUISIÇÃO - STATUS 201`
-```json
-{
-	"message": "text",
-    "userId": "2"
+	"category": "Eletronico",
+	"height": "10Kg",
+	"image": "url.img",
+    "client_id": "1",
+	"status": "Pendente"
 }
 ```
 
-<h2 align ='center'> Visualizar mensagens </h2>
+   O campo - "height" pode ser substituido por "volume" dependendo da categoria que o client escolher, caso ele for cadastrar um resíduo que não se mede por peso mas sim por volume
 
-`GET /messages - FORMATO DA REQUISIÇÃO - STATUS 200`
+<h2 align ='center'> Alterar dados do resíduo cadastrado </h2>
+
+caso o client tenha errado algum dado preenchido na hora de cadastrar o resíduo, ele pode estar alterando usando este endpont:
+
+`PATCH /waste/:id - FORMATO DA REQUISIÇÃO`
 ```json
-[
-	{
-		"text": "texto teste",
-		"userId": "2",
+{
+	"category": "Papel",
+}
+```
+
+<h2 align ='center'> Deletar resíduo cadastrado </h2>
+
+Também é possivel deletar o resíduo cadastrado, utilizando este endpoint:
+
+`DELETE /waste/:id`
+```json
+não é necessário um corpo da requisição
+```
+
+## Rotas do collector
+
+<h2 align ='center'> Listar empresas </h2>
+
+Aqui o coletor podera listar as empresas e ver a descrição de cada uma delas
+
+`GET /companies - FORMATO DA RESPOSTA - STATUS 200`
+```json
+{
+		"nome": "ecoReciclagens",
+		"city": "sao paulo",
+		"imgage": "url.img",
+		"materials": [
+			"papel",
+			"plastico"
+		]
+	}
+```
+
+<h2 align ='center'> Listar todos resíduos </h2>
+
+Podemos Listar todos os resíduos que os clients cadastraram  com este endpoint:
+
+> `GET /waste - FORMATO DA RESPOSTA - STATUS 200`
+```json
+{
+		"category": "Papel",
+		"height": "10Kg",
+		"client_id": "1",
+		"image": "url.img",
+		"status": "pendente",
 		"id": 1
 	},
 	{
-		"text": "texto teste",
+		"category": "Eletronico",
+		"height": "10Kg",
+		"client_id": "1",
+		"image": "url.img",
+		"status": "pendente",
 		"id": 2
 	},
 	{
-		"text": "texto teste",
-		"userId": "1",
+		"category": "Oleo",
+		"volume": "10",
+		"client_id": "1",
+		"image": "url.img",
+		"status": "pendente",
 		"id": 3
-	},
-	{
-		"text": "texto teste",
-		"userId": "1",
-		"id": 4
-	}
-]
+    }
 ```
+
+
+<h2 align ='center'> Alterar resíduo </h2>
+
+Com este endpoint podemos fazer a alteração de qualquer propriedade do resíduo, mas utilizaremos para alterar o "status" e adicionar a propriedade "collector_id"
+
+`PATCH /waste/:id - FORMATO DA REQUISIÇÃO`
+```json
+{
+	"status": "reservado",
+    "collector_id": "3"
+}
+```
+
