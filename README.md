@@ -44,7 +44,7 @@ Após ele estar logado, ele deve conseguir utilizar todas os rotas que serão de
 	"category": "Eletronico",
 	"height": "10Kg",
 	"image": "url.img",
-    "client_id": "1",
+    "client_id": "3",
 	"status": "Pendente"
 }
 ```
@@ -80,12 +80,20 @@ Aqui o coletor podera listar as empresas e ver a descrição de cada uma delas
 `GET /companies - FORMATO DA RESPOSTA - STATUS 200`
 ```json
 {
-		"nome": "ecoReciclagens",
-		"city": "sao paulo",
-		"imgage": "url.img",
+		"name": "ecoreciclagens",
+		"city": "curitiba",
+		"image": "logo.img",
 		"materials": [
 			"papel",
 			"plastico"
+		]
+	},
+	{
+		"name": "reciclaEletronicos",
+		"city": "vargem grande paulista",
+		"image": "logo.img",
+		"materials": [
+			"Eletronicos"
 		]
 	}
 ```
@@ -107,7 +115,7 @@ Podemos Listar todos os resíduos que os clients cadastraram  com este endpoint:
 	{
 		"category": "Eletronico",
 		"height": "10Kg",
-		"client_id": "1",
+		"client_id": "3",
 		"image": "url.img",
 		"status": "pendente",
 		"id": 2
@@ -119,7 +127,7 @@ Podemos Listar todos os resíduos que os clients cadastraram  com este endpoint:
 		"image": "url.img",
 		"status": "pendente",
 		"id": 3
-    }
+	}
 ```
 
 

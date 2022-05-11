@@ -1,98 +1,80 @@
 {
   "users": [
     {
-      "email": "teste@gmail.com",
-      "password": "$2a$10$73D2dD/j3a//keYjVxCUNeD8xe6wxjldL3n24ABDazIRPB7FtSWOe",
-      "name": "teste",
+      "email": "client@gmail.com",
+      "password": "$2a$10$iwhrBx36SIRkxvoxM52XBubW/lPa7T6a1aHMUpVlnUy9f5IukGfvu",
+      "name": "client",
       "image": "url.img",
-      "city": "lugar nenhum",
-      "type": "user",
+      "city": "curitiba",
+      "type": "client",
       "wallet": 1,
       "id": 1
     },
     {
-      "email": "coletor@gmail.com",
-      "password": "$2a$10$./Lr186YhWq3OyYvJ3oRVet74RypG/mR1eSjggLDrNtqUxbY6HPTq",
-      "name": "coletor",
+      "email": "collector@gmail.com",
+      "password": "$2a$10$rnvxGL.UAGFziqAgz4eDNe7xhwMAfACPLgLaz9At8eDbYxJRmlwkS",
+      "name": "collector",
       "image": "url.img",
       "city": "lugar nenhum",
-      "type": "coletor",
+      "type": "collector",
       "wallet": 1,
       "id": 2
     },
     {
-      "email": "coletorsegundo@gmail.com",
-      "password": "$2a$10$kw79RPNfunNtTzQ2EPOBxOHUPlRn1iw9PGebUDiTs.F2ZTXCFQVZK",
-      "name": "coletorsegundo",
+      "email": "luis@gmail.com",
+      "password": "$2a$10$jLYFAAF7lfE59wVA2qp5V.v5GIAmFw6.lwPf3GM9ppWXBZAJXTSGu",
+      "name": "client",
       "image": "url.img",
-      "city": "lugar nenhum",
-      "type": "coletor",
+      "city": "Vargem grande paulista",
+      "type": "client",
       "wallet": 1,
-      "": [],
       "id": 3
-    },
-    {
-      "email": "coletorterceiro@gmail.com",
-      "password": "$2a$10$IeEvyUh51ytNXUqYsWHvueK.xrIZgrtozCoVmXeeYs0KUnv9N.6gC",
-      "name": "coletorterceiro",
-      "image": "url.img",
-      "city": "lugar nenhum",
-      "type": "coletor",
-      "wallet": 1,
-      "waste withdrawn": [],
-      "id": 4
     }
   ],
+
   "waste": [
     {
-      "category": "papel",
-      "height": "10kg",
-      "userId": "1",
+      "category": "Papel",
+      "height": "10Kg",
+      "client_id": "1",
       "image": "url.img",
       "status": "pendente",
       "id": 1
     },
     {
-      "category": "papel",
-      "height": "10kg",
-      "userId": "1",
+      "category": "Eletronico",
+      "height": "10Kg",
+      "client_id": "3",
       "image": "url.img",
       "status": "pendente",
       "id": 2
     },
     {
-      "category": "papel",
-      "height": "10kg",
-      "userId": "1",
+      "category": "Oleo",
+      "volume": "10",
+      "client_id": "1",
       "image": "url.img",
       "status": "pendente",
       "id": 3
-    },
-    {
-      "category": "papel",
-      "height": "10kg",
-      "userId": "1",
-      "image": "url.img",
-      "status": "pendente",
-      "id": 4
-    },
-    {
-      "category": "eletronico",
-      "height": "10kg",
-      "userId": "1",
-      "image": "url.img",
-      "status": "pendente",
-      "id": 5
     }
   ],
+
   "companies": [
     {
       "name": "ecoreciclagens",
-      "city": "sao paulo",
-      "image": "url.img",
+      "city": "curitiba",
+      "image": "logo.img",
       "materials": [
         "papel",
         "plastico"
+      ]
+    },
+    {
+      "name": "reciclaEletronicos",
+      "city": "vargem grande paulista",
+      "image": "logo.img",
+      "materials": [
+        "Eletronicos"
       ]
     }
   ]
