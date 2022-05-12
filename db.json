@@ -65,9 +65,10 @@
       "city": "curitiba",
       "image": "logo.img",
       "materials": [
-        "papel",
-        "plastico"
-      ]
+        "Papel",
+        "Plastico"
+      ],
+      "id": 1
     },
     {
       "name": "reciclaEletronicos",
@@ -75,7 +76,38 @@
       "image": "logo.img",
       "materials": [
         "Eletronicos"
-      ]
+      ],
+      "id": 2
+    },
+    {
+      "name": "ECOlatas",
+      "city": "Brasília",
+      "image": "logo.img",
+      "materials": [
+        "Metal"		
+      ],
+      "id": 3
+    },
+    {
+      "name": "Coleta LTDA",
+      "city": "Goiania",
+      "image": "logo.img",
+      "materials": [
+        "Vidro",                                                                        
+        "Papel",
+        "Plático",
+        "Metal"		
+      ],
+      "id": 4
+    },
+    {
+      "name": "EcoVida",
+      "city": "Minas Gerias",
+      "image": "logo.img",
+      "materials": [
+        "Óleo"
+      ],
+      "id": 5
     }
   ]
 }
