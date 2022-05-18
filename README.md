@@ -55,7 +55,7 @@ Após estar logado, ele deve conseguir utilizar todas os rotas que serão descri
 ```json
 {
 	"category": "Eletronico",
-	"height": "10Kg",
+	"Weight": "10Kg",
 	"image": "url.img",
 	"client_id": "3",
 	"status": "Pendente"
@@ -119,16 +119,16 @@ Podemos listar todos os resíduos que os clients cadastraram  com este endpoint:
 ```json
 {
 	"category": "Papel",
-	"height": "10Kg",
-	"client_id": "1",
+	"Weight": "10Kg",
+	"client_id": 1,
 	"image": "url.img",
 	"status": "pendente",
 	"id": 1
 },
 {
 	"category": "Eletronico",
-	"height": "10Kg",
-	"client_id": "3",
+	"Weight": "10Kg",
+	"client_id": 3,
 	"image": "url.img",
 	"status": "pendente",
 	"id": 2
@@ -136,7 +136,7 @@ Podemos listar todos os resíduos que os clients cadastraram  com este endpoint:
 {
 	"category": "Oleo",
 	"volume": "10",
-	"client_id": "1",
+	"client_id": 1,
 	"image": "url.img",
 	"status": "pendente",
 	"id": 3
@@ -152,7 +152,23 @@ Com este endpoint podemos fazer a alteração de qualquer propriedade do resídu
 ```json
 {
 	"status": "reservado",
-	"collector_id": "3"
+	"collector_id": 2
 }
 ```
 O "collector_id" ira recerber o id do collector que ira realizar a coleta do resíduo.
+
+<h2 align ='center'> Abandono do resíduo coletado </h2>
+
+Com este endpoint o coletor poderá desistir de um resíduo que foi pego por ele, assim fazendo com que o o resíduo volte para a lista de resíduos pendentes
+
+`PUT /waste/:id - FORMATO DA REQUISIÇÃO`
+```json
+{
+	"category": "Oleo",
+	"volume": "10",
+	"client_id": 1,
+	"image": "url.img",
+	"status": "pendente",
+	"id": 3
+}
+```

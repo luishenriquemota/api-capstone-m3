@@ -35,16 +35,16 @@
   "waste": [
     {
       "category": "Papel",
-      "height": "10Kg",
-      "client_id": "1",
+      "Weight": "10Kg",
+      "client_id": 1,
       "image": "url.img",
       "status": "pendente",
       "id": 1
     },
     {
       "category": "Eletronico",
-      "height": "10Kg",
-      "client_id": "3",
+      "Weight": "10Kg",
+      "client_id": 3,
       "image": "url.img",
       "status": "pendente",
       "id": 2
@@ -52,7 +52,7 @@
     {
       "category": "Oleo",
       "volume": "10",
-      "client_id": "1",
+      "client_id": 1,
       "image": "url.img",
       "status": "pendente",
       "id": 3
