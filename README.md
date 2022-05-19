@@ -9,7 +9,6 @@ O url base da API é https://api-capstone-m3.herokuapp.com/
 
 <h2 align ='center'> Cadastro do usuário </h2>
 
-`POST /register`
 `POST /register - FORMATO DA REQUISIÇÃO`
 
 ```json
@@ -17,6 +16,7 @@ O url base da API é https://api-capstone-m3.herokuapp.com/
 	"email": "luis@gmail.com",
 	"password": "123456",
 	"name": "client",
+	"cpf": "cpf || cnpj",
 	"image":"url.img",
 	"city": "Vargem grande paulista",
 	"type": "client",
@@ -38,6 +38,25 @@ Existem dois campo obrigatórios para essa rota que são os de email e password,
 
 Este endpoint é usado para fazer login do usuário que já está cadastrado.
 
+<h2 align ='center'> Mostrar dados do usuário </h2>
+
+`GET /users/:userid - FORMATO DA RESPOSTA - STATUS 200`
+```json
+{
+	"email": "client@gmail.com",
+	"password": "$2a$10$iwhrBx36SIRkxvoxM52XBubW/lPa7T6a1aHMUpVlnUy9f5IukGfvu",
+	"name": "client",
+	"cpf": "cpfcnpj",
+	"image": "url.img",
+	"city": "curitiba",
+	"type": "client",
+	"wallet": 1,
+	"id": 1
+}
+```
+
+Este endpoint é usado para mostrar os dados de um usuário específico, passando com o id do usuário na rota.
+
 ## Rotas que necessitam de autenticação
 
 Rotas que necessitam de autorização deve ser informado no cabeçalho da requisição o campo "Authorization", dessa forma:
@@ -51,18 +70,19 @@ Após estar logado, ele deve conseguir utilizar todas os rotas que serão descri
 
 <h2 align ='center'> Cadastrar um resíduo </h2>
 
+este endpoint é usado para cadastrar um resíduo.
+
 `POST /waste - FORMATO DA REQUISIÇÃO`
 ```json
 {
-	"category": "Eletronico",
-	"Weight": "10Kg",
+	"category": "Eletronicos",
+	"measure": 10,
+	"client_id": 3,
 	"image": "url.img",
-	"client_id": "3",
-	"status": "Pendente"
+	"status": "Pendente",
+	"id": 2
 }
 ```
-
-   O campo - "height" pode ser substituido por "volume" dependendo da categoria que o client escolher, caso ele for cadastrar um resíduo que não se mede por peso, mas sim por volume.
 
 <h2 align ='center'> Alterar dados do resíduo cadastrado </h2>
 
@@ -94,16 +114,16 @@ Aqui o coletor poderá listar as empresas e ver a descrição de cada uma delas.
 ```json
 {
 	"name": "ecoreciclagens",
-	"city": "curitiba",
+	"city": "Curitiba",
 	"image": "logo.img",
 	"materials": [
-		"papel",
-		"plastico"
+		"Papel",
+		"Plastico"
 	]
 },
 {
 	"name": "reciclaEletronicos",
-	"city": "vargem grande paulista",
+	"city": "Vargem grande paulista",
 	"image": "logo.img",
 	"materials": [
 		"Eletronicos"
@@ -119,30 +139,29 @@ Podemos listar todos os resíduos que os clients cadastraram  com este endpoint:
 ```json
 {
 	"category": "Papel",
-	"Weight": "10Kg",
+	"measure": 5,
 	"client_id": 1,
 	"image": "url.img",
-	"status": "pendente",
+	"status": "Pendente",
 	"id": 1
 },
 {
-	"category": "Eletronico",
-	"Weight": "10Kg",
+	"category": "Eletronicos",
+	"measure": 10,
 	"client_id": 3,
 	"image": "url.img",
-	"status": "pendente",
+	"status": "Pendente",
 	"id": 2
 },
 {
 	"category": "Oleo",
-	"volume": "10",
+	"measure": 3,
 	"client_id": 1,
 	"image": "url.img",
-	"status": "pendente",
+	"status": "Pendente",
 	"id": 3
 }
 ```
-
 
 <h2 align ='center'> Alterar resíduo </h2>
 
@@ -159,16 +178,9 @@ O "collector_id" ira recerber o id do collector que ira realizar a coleta do res
 
 <h2 align ='center'> Abandono do resíduo coletado </h2>
 
-Com este endpoint o coletor poderá desistir de um resíduo que foi pego por ele, assim fazendo com que o o resíduo volte para a lista de resíduos pendentes
+Com este endpoint o coletor poderá desistir de um resíduo que foi pego por ele, assim fazendo com que o resíduo volte para a lista de resíduos pendentes
 
-`PUT /waste/:id - FORMATO DA REQUISIÇÃO`
+`PUT /waste/:id - FORMATO DA RESPOSTA`
 ```json
-{
-	"category": "Oleo",
-	"volume": "10",
-	"client_id": 1,
-	"image": "url.img",
-	"status": "pendente",
-	"id": 3
-}
+não é necessário um corpo da requisição.
 ```

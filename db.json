@@ -4,6 +4,7 @@
       "email": "client@gmail.com",
       "password": "$2a$10$iwhrBx36SIRkxvoxM52XBubW/lPa7T6a1aHMUpVlnUy9f5IukGfvu",
       "name": "client",
+      "cpf": "cpfcnpj",
       "image": "url.img",
       "city": "curitiba",
       "type": "client",
@@ -14,6 +15,7 @@
       "email": "collector@gmail.com",
       "password": "$2a$10$rnvxGL.UAGFziqAgz4eDNe7xhwMAfACPLgLaz9At8eDbYxJRmlwkS",
       "name": "collector",
+      "cpf": "cpfcnpj",
       "image": "url.img",
       "city": "lugar nenhum",
       "type": "collector",
@@ -24,6 +26,7 @@
       "email": "luis@gmail.com",
       "password": "$2a$10$jLYFAAF7lfE59wVA2qp5V.v5GIAmFw6.lwPf3GM9ppWXBZAJXTSGu",
       "name": "client",
+      "cpf": "cpfcnpj",
       "image": "url.img",
       "city": "Vargem grande paulista",
       "type": "client",
@@ -35,26 +38,26 @@
   "waste": [
     {
       "category": "Papel",
-      "Weight": "10Kg",
+      "measure": 5,
       "client_id": 1,
       "image": "url.img",
-      "status": "pendente",
+      "status": "Pendente",
       "id": 1
     },
     {
-      "category": "Eletronico",
-      "Weight": "10Kg",
+      "category": "Eletronicos",
+      "measure": 10,
       "client_id": 3,
       "image": "url.img",
-      "status": "pendente",
+      "status": "Pendente",
       "id": 2
     },
     {
       "category": "Oleo",
-      "volume": "10",
+      "measure": 3,
       "client_id": 1,
       "image": "url.img",
-      "status": "pendente",
+      "status": "Pendente",
       "id": 3
     }
   ],
@@ -62,7 +65,7 @@
   "companies": [
     {
       "name": "ecoreciclagens",
-      "city": "curitiba",
+      "city": "Curitiba",
       "image": "logo.img",
       "materials": [
         "Papel",
@@ -72,7 +75,7 @@
     },
     {
       "name": "reciclaEletronicos",
-      "city": "vargem grande paulista",
+      "city": "Vargem grande paulista",
       "image": "logo.img",
       "materials": [
         "Eletronicos"
@@ -95,7 +98,7 @@
       "materials": [
         "Vidro",                                                                        
         "Papel",
-        "Plático",
+        "Plástico",
         "Metal"		
       ],
       "id": 4
