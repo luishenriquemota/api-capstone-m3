@@ -32,9 +32,30 @@
       "type": "client",
       "wallet": 1,
       "id": 3
+    },
+    {
+      "email": "luiss@gmail.com",
+      "password": "$2a$10$FoALeA7WdH5XYZMrzJwe..wcxCvR8o.FJc7uIhom6TAiZmC8gsZT2",
+      "name": "client",
+      "cpf": "cpf || cnpj",
+      "image": "url.img",
+      "city": "Vargem grande paulista",
+      "type": "client",
+      "wallet": 1,
+      "id": 4
+    },
+    {
+      "email": "luisss@gmail.com",
+      "password": "$2a$10$AUbuEkzV5wFu1hvGpBxALu4f718MsBGWbBxEpXdmblgD8KzZnIE4q",
+      "name": "client",
+      "cpf": "cpf || cnpj",
+      "image": "url.img",
+      "city": "Vargem grande paulista",
+      "type": "client",
+      "wallet": 1,
+      "id": 5
     }
   ],
-
   "waste": [
     {
       "category": "Papel",
@@ -61,7 +82,6 @@
       "id": 3
     }
   ],
-
   "companies": [
     {
       "name": "ecoreciclagens",
@@ -87,7 +107,7 @@
       "city": "Brasília",
       "image": "logo.img",
       "materials": [
-        "Metal"		
+        "Metal"
       ],
       "id": 3
     },
@@ -96,10 +116,10 @@
       "city": "Goiania",
       "image": "logo.img",
       "materials": [
-        "Vidro",                                                                        
+        "Vidro",
         "Papel",
         "Plástico",
-        "Metal"		
+        "Metal"
       ],
       "id": 4
     },
