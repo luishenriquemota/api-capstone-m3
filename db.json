@@ -32,6 +32,17 @@
       "type": "client",
       "wallet": 1,
       "id": 3
+    },
+    {
+      "email": "luisss@gmail.com",
+      "password": "$2a$10$zm5d3SGdqk/W8b.Hk46cAODf8CW9R2c6nQv3stWuWSnxGDDI5OuCi",
+      "name": "client",
+      "cpf": "cpf || cnpj",
+      "image": "url.img",
+      "city": "Vargem grande paulista",
+      "type": "client",
+      "wallet": 1,
+      "id": 4
     }
   ],
   "waste": [
